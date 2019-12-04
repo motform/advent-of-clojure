@@ -14,15 +14,15 @@
           target (nth opcodes (+ cursor 3))]
       (assoc opcodes target ret))))
 
-(def op-add  (math-op +))
-(def op-mult (math-op *))
+(def op-add (math-op +))
+(def op-mul (math-op *))
 
 (defn intcode [opcodes]
   (loop [cursor 0 opcodes opcodes]
     (let [op (nth opcodes cursor)]
       (case op
-        1  (recur (+ cursor 4) (op-add  cursor opcodes))
-        2  (recur (+ cursor 4) (op-mult cursor opcodes))
+        1  (recur (+ cursor 4) (op-add cursor opcodes))
+        2  (recur (+ cursor 4) (op-mul cursor opcodes))
         99 opcodes
         :error))))
 
