@@ -1,4 +1,4 @@
-(ns advent-of-clojure.two)
+(ns advent-of-clojure.2019.two)
 
 (def opcodes
   (-> "resources/two.dat" slurp (as-> xs (str "[" xs "]")) read-string))

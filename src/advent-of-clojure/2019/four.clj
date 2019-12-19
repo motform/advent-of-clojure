@@ -1,4 +1,4 @@
-(ns advent-of-clojure.four)
+(ns advent-of-clojure.2019.four)
 
 (def input (range 356261 846304))
 

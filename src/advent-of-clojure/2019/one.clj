@@ -1,4 +1,4 @@
-(ns advent-of-clojure.one
+(ns advent-of-clojure.2019.one
   (:require [clojure.string :as s]
             [clojure.math.numeric-tower :as m]))
 

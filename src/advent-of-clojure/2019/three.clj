@@ -1,4 +1,4 @@
-(ns advent-of-clojure.three
+(ns advent-of-clojure.2019.three
   (:require [clojure.string :as s]
             [clojure.set :refer [intersection]]
             [clojure.math.numeric-tower :refer [abs]]))

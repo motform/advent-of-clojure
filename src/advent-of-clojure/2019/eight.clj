@@ -1,4 +1,4 @@
-(ns advent-of-clojure.eight
+(ns advent-of-clojure.2019.eight
   (:require [clojure.string :as s]))
 
 (def image
@@ -26,4 +26,5 @@
       (partition 25)
       (map (partial apply str))
       (map #(s/replace % #"1" "□"))
-      (map #(s/replace % #"0" "■"))))
+      (map #(s/replace % #"0" "■")))))
+

@@ -1,4 +1,4 @@
-(ns advent-of-clojure.six
+(ns advent-of-clojure.2019.six
   (:require [clojure.string :as str]))
 
 (def orbits
