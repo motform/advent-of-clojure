@@ -6,8 +6,7 @@
   (map #(Character/getNumericValue %) (str x)))
 
 (defn chain [digits]
-  (let [occurances (partition-by identity digits)]
-    (interleave (map count occurances) (map first occurances))))
+  (->> digits (partition-by identity) (mapcat (juxt count first))))
 
 (defn look-and-say [seed]
   (iterate chain seed))
