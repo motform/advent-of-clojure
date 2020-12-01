@@ -1,20 +1,17 @@
 (ns advent-of-clojure.2020.one
-  (:require [clojure.string :as str]
-            [clojure.math.combinatorics :refer [combinations]]
-            [clojure.set :as set]))
+  (:require [clojure.string :as str]))
 
 (def expenses
-  (->> "resources/2020/one.dat" slurp str/split-lines (map read-string) (into #{})))
+  (->> "resources/2020/one.dat" slurp str/split-lines (map read-string) ))
 
 (def one
-  (->> expenses
-       (map (comp #(Math/abs %) #(- % 2020)))
-       (into #{})
-       (set/intersection expenses)
-       (apply *)))
+  (first
+   (for [x expenses y expenses
+         :when (= 2020 (+ x y))]
+     (* x y))))
 
 (def two
-  (->> (combinations expenses 3)
-       (filter #(= 2020 (apply + %)))
-       flatten
-       (apply *)))
+  (first
+   (for [x expenses y expenses z expenses
+         :when (= 2020 (+ x y z))]
+     (* x y z))))
