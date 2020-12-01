@@ -1,12 +1,43 @@
-a clojurist completion of adventofcode.com
-==========================================
-
-２０１９ => ２０１５ =>
-**          ** 
-01          18 
-12          12
-19          19
-
-==========================================
-* code/input is namespaces under years
-* done with (mostly) only clojure.core
+                                               _________________________________________
+                                              / clo clo clo,                            \
+                                              \ and a lambda new christmast to you!     /
+                                               -----------------------------------------
+                                               /
+                                              /
+                             qQQggggWWWWWWWBgggpQQ,
+                        qggdWWWWWWWWWWWWWWWWWWWWWWWWgpQ,
+                     QgWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWBpQ
+                  QgWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWp,
+               \g#WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWBp
+             \gWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWBp
+            gWW"""\   7"""WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWBp
+           "                 "W""              ""WWWWWWWWWWWWWWWWWWWk,
+                                      ,,,,         "WWWWWWWWWWWWWWWWWB,
+                QQQgggpQ,         JEEEEEEEEENmqQ,     "MWWWWWWWWWWWWWWWp
+           \gpWWWWWWWBW\    q,     /WEEEEEEEEEEEEAg,    "WWWWWWWWWWWWWWWp
+         qpWWWWWWWWWW"    qWEZAp    /WEEEEEEEEEEEEEEM,    WWWWWWWWWWWWWWW,
+       \dWWWWWWWWWWW\   qWEEEEEKM,   /WEEEEEEEEEEEEEE@k,   JWWWWWWWWWWWWWE
+      qWWWWWWWWWWWW\   qEEEEEEEEEA,   JpEEEEEEEEEEEEEEEA,   JWWWWWWWWWWWWWb
+     qWWWWWWWWWWWW\   qEEEEEEEEEEEA,   4EEEEEEEEEEEEEEEEA,   JWWWWWWWWWWWWB
+    qWWWWWWWWWWWWA   \BEEEEEEEEEEEEA    WEEEEEEEEEEEEEEEEL    WWWWWWWWWWWWWp
+    #WWWWWWWWWWWW\   fEEEEEEEEEEEEEEk   JpEEEEEEEEEEEEEEEHb   JWWWWWWWWWWWWb
+    WWWWWWWWWWWWW    EEEEEEEEEEEEEEqC    TEEEEEEEEEEEEEEEN#   dWWWWWWWWWWWW#
+    WWWWWWWWWWWWW    NEEEEEEEEEEEEqC     JpEEEEEEEEEEEEEEB#   \WWWWWWWWWWWW#
+    WWWWWWWWWWWWW    WEEEEEEEEEEEqC  \p   4EEEEEEEEEEEEEEE#   dWWWWWWWWWWWW#
+    TWWWWWWWWWWWWp   4EEEEEEEEEEqC  \#H,   LEEEEEEEEEEEEEHb   qWWWWWWWWWWWWR
+    4WWWWWWWWWWWWb   /EEEEEEEEEqC   #EZL   /WEEEEEEEEEEEEF    #WWWWWWWWWWWW\
+    /WWWWWWWWWWWWWp   JpEEEEEEqC   dEEEHp   JEEEEEEEEEEEW\   qWWWWWWWWWWWW"
+     4WWWWWWWWWWWWB,   JqEEEEHE   qNEEEBA,   JEEEEEEEEEW\   qWWWWWWWWWWWW"
+     /WWWWWWWWWWWWWB,   /AQEEF    #EEEEEEk    /WEEEEEgF    gWWWWWWWWWWWF\
+      JWWWWWWWWWWWWWWp    "MW\   dEEEEEEEHk     "qQgF\   \gWWWWWWWWWW"
+       JWWWWWWWWWWWWWWB,         #EEEEEEEEKk            vWWWWWWW""\
+        JWWWWWWWWWWWWWWWgg       JWWgQQQQQQWAt
+         JWBWWWWWWWWWWWWWWWgQ
+          /MWWWWWWWWWWWWWWWWWWMpQQ           \Qgp#BggpQQQQQQQQQQQggge
+            JWWWWWWWWWWWWWWWWWWWWWWWWggpggdWWWWWWWWWWWWWWWWWWWWWWWW\
+              "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWBW"
+                "MBWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+                  "WWBWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWBW"\
+                     "WMWBWWWWWWWWWWWWWWWWWWWWWWWWWWWWBWW"\
+                         ""WWWBWWWWWWWWWWWWWWWWWBBWWW""
+                              /"""WWWWWWWWWWWW"""
