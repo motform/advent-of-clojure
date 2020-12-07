@@ -1,7 +1,8 @@
 {:paths ["src" "resources"]
 
- :deps {org.clojure/data.json {:mvn/version "0.2.6"}
-        org.clojure/math.numeric-tower {:mvn/version "0.0.4"}
+ :deps {digest/digest                  {:mvn/version "1.4.9"}
+        org.clojure/core.logic         {:mvn/version "1.0.0"}
+        org.clojure/data.json          {:mvn/version "0.2.6"}
+        org.clojure/data.priority-map  {:mvn/version "0.0.10"} 
         org.clojure/math.combinatorics {:mvn/version "0.1.6"}
-        digest {:mvn/version "1.4.9"}
-        org.clojure/data.priority-map {:mvn/version "0.0.10"}}}
+        org.clojure/math.numeric-tower {:mvn/version "0.0.4"}}}
