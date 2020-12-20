@@ -34,6 +34,7 @@
   (let [next (update-seats seats)]
     (if (= next seats)
       seats
+
       (recur next))))
 
 #_(def one (get (->> (run-simulation seats) flatten frequencies) \#))
