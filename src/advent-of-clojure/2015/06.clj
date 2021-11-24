@@ -5,11 +5,6 @@
 (def instructions
   (-> "resources/2015/six.dat" slurp str/trimr str/split-lines))
 
-(def instructions-one
-  {"turn on" turn-on
-   "turn off" turn-off
-   "toggle" toggle})
-
 (defn digits [xs]
   (map read-string xs))
 
@@ -32,6 +27,11 @@
 (defn toggle [lights]
   (fn [house]
     (reduce toggle' house lights)))
+
+(def instructions-one
+  {"turn on" turn-on
+   "turn off" turn-off
+   "toggle" toggle})
 
 (defn parse-fn [instruction instructions]
   (-> instruction
@@ -79,9 +79,9 @@
   (let [f (update-point f)]
     (reduce #(f %1 %2) mat points)))
 
-(def part-two
+(defn part-two []
   (->> instructions
-      (map parse-revised-instruction)
-      (reduce #(update-points %1 %2) lights-matrix)
-      flatten
-      (reduce +)))
+       (map parse-revised-instruction)
+       (reduce #(update-points %1 %2) lights-matrix)
+       flatten
+       (reduce +)))
