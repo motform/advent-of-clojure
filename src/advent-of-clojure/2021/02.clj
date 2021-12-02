@@ -14,13 +14,15 @@
    "down"    (fn [state n] (update state :y + n))
    "up"      (fn [state n] (update state :y - n))}) 
 
-(def part-one (->> input
-                   (parse-commands direction->f)
-                   (reduce (fn [state [f n]]
-                             (f state n))
-                           {:x 0 :y 0})
-                   vals
-                   (apply *)))
+(defn execute-commands [commands]
+  (reduce (fn [state [f n]]
+            (f state n))
+          {:x 0 :y 0 :aim 0}
+          commands))
+
+(defn mul-pos [{:keys [x y]}] (* x y))
+
+(def part-one (->> input (parse-commands direction->f) execute-commands mul-pos))
 
 (def direction->f-2
   {"forward" (fn [state n] (let [aim (:aim state)]
@@ -29,10 +31,4 @@
    "down"    (fn [state n] (update state :aim + n))
    "up"      (fn [state n] (update state :aim - n))}) 
 
-(def part-two (let [{:keys [x y]}
-                    (->> input
-                         (parse-commands direction->f-2)
-                         (reduce (fn [state [f n]]
-                                   (f state n))
-                                 {:x 0 :y 0 :aim 0}))]
-                (* x y)))
+(def part-two (->> input (parse-commands direction->f-2) execute-commands mul-pos))
