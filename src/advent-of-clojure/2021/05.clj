@@ -25,15 +25,13 @@
 (defmethod path false [[x1 y1 x2 y2]]
   (partition 2 (interleave (points x1 x2) (points y1 y2))))
 
-(def part-one (->> input
-                   (filter ortho?)
-                   (mapcat path)
-                   frequencies
-                   (filter (fn [[_ v]] (<= 2 v)))
-                   count))
+(defn overlaps [points]
+  (->> points
+       (mapcat path)
+       frequencies
+       (filter (fn [[_ v]] (<= 2 v)))
+       count))
 
-(def part-two (->> input
-                   (mapcat path)
-                   frequencies
-                   (filter (fn [[_ v]] (<= 2 v)))
-                   count))
+(def part-one (overlaps (filter ortho? input)))
+
+(def part-two (overlaps input))
