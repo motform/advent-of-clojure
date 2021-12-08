@@ -70,13 +70,9 @@
   (seven-digit-display-mappings (set (map #(key %) output))))
 
 (defn decode-row [[pattern output]]
-  (map (partial decode-output  (-> pattern map-by-string-lenght letter-frequencies decode set/map-invert))
-       output))
-
-(defn remove-leading-0 [s]
-  (if (= \0 (first s)) (subs s 1 (count s)) s))
+  (map (partial decode-output (-> pattern map-by-string-lenght letter-frequencies decode set/map-invert)) output))
 
 (defn decode-table [table]
-  (map (comp read-string remove-leading-0 (partial apply str) decode-row) table))
+  (map (comp parse-long (partial apply str) decode-row) table))
 
 (def part-two (->> input parse-input decode-table (apply +)))
