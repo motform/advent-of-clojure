@@ -1,11 +1,10 @@
 (ns advent-of-clojure.2021.09
-  (:require [clojure.string :as str]
-            [clojure.set :as set]))
+  (:require [clojure.string :as str]))
 
 (def input (->> "resources/2021/09.dat" slurp str/split-lines (mapv (comp (partial mapv parse-long) #(str/split % #" *")))))
 
 (defn nnth? [xs x y]
-  (get (get xs y nil) x nil))
+  (get-in xs [x y]))
 
 (defn adjecent [matrix]
   (let [nnth? (partial nnth? matrix)]
@@ -46,7 +45,7 @@
       (persistent! seen))))
 
 (defn points [matrix]
-  (->> matrix (map-indexed (fn [y row] (map-indexed (fn [x _] [x y]) row))) (apply concat)))
+  (for [x (count (first matrix)) y (count matrix)] [x y]))
 
 (def part-two (->> input
                    points
