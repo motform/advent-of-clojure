@@ -41,4 +41,5 @@
        (apply -))))
 
 (def part-one (solution input 10))
+
 (def part-two (solution input 40))
