@@ -28,7 +28,7 @@
 (captcha [9 1 2 1 2 1 2 9])
 
 ;; ##### Solution
-(captcha input)
+(def part-one captcha input)
 
 ;; ### Part Two
 
@@ -40,11 +40,7 @@
 (defn captcha' [xs]
   (->> xs
        (map-indexed (partial matches-halfway? xs))
-       #_(reduce +)))
-
-(clerk/add-viewers!
- [{:pred (every-pred list? (partial every? number?))
-   :render-fn '#(v/html (into [:div.flex.flex-col] (v/inspect-children %2) %1))}])
+       (reduce +)))
 
 ;; 1212 produces 6: the list contains 4 items, and all four digits match the digit 2 items ahead.
 (captcha' [1 2 1 2])
@@ -58,4 +54,4 @@
 (captcha' [1 2 1 3 1 4 1 5])
 
 ;; #### Solution
-(captcha' input)
+(def part-two captcha' input)

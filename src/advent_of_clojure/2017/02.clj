@@ -1,6 +1,5 @@
 (ns advent-of-clojure.2017.02
-  (:require [clojure.string :as str]
-            [nextjournal.clerk :as clerk]))
+  (:require [clojure.string :as str]))
 
 ;; ### Description
 ;; The spreadsheet consists of rows of apparently-random numbers.
