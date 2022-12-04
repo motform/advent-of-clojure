@@ -2,5 +2,3 @@
 
 (def input 361527)
 
-(defn manhattan-distance [pos]
-  ())
