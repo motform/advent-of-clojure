@@ -40,6 +40,6 @@
                       (m/index-of input start)))
 
 (def part-two (search input
-                     #(<= -1 %)
-                     (m/indexes input 0)
-                     (m/index-of input end)))
+                      #(<= -1 %)
+                      (m/indexes input 0)
+                      (m/index-of input end)))
