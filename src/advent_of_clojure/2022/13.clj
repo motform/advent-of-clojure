@@ -33,13 +33,13 @@
 (def part-one
   (->> input
        (partition 2)
-       (map-indexed (fn [i pair] [(inc i) (ordered? pair)]))
-       (keep (fn [[i ordered?]] (when ordered? i)))
+       (keep-indexed (fn [i pair] (when (ordered? pair) (inc i))))
        (reduce +)))
+
+(def divider? #{[[2]] [[6]]})
 
 (def part-two
   (->> (conj input [[2]] [[6]])
        (sort ordered?)
-       (map-indexed (fn [i packet] [(inc i) (#{[[2]] [[6]]} packet)]))
-       (keep (fn [[i ordered?]] (when ordered? i)))
+       (keep-indexed (fn [i packet] (when (divider? packet) (inc i))))
        (apply *)))
