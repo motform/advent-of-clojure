@@ -1,7 +1,7 @@
 (ns advent-of-clojure.2023.02
   (:require [clojure.string :as str]))
 
-(def input (->> (-> "resources/2023/02.dat" slurp (str/split-lines))))
+(def input (-> "resources/2023/02.dat" slurp (str/split-lines)))
 
 (defn parse-color [s]
   (let [[_ number color] (re-find #"(\d+) (\w+)" s)]

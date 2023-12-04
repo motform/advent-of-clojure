@@ -5,7 +5,7 @@
     [clojure.set :as set]
     [advent-of-clojure.util.matrix :as grid]))
 
-(def input (->> (-> "resources/2023/03.dat" slurp (str/split-lines))))
+(def input (-> "resources/2023/03.dat" slurp (str/split-lines)))
 
 (def not-symbol (re-pattern #"[^\d\.]+"))
 

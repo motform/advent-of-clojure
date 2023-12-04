@@ -2,7 +2,7 @@
   (:refer-clojure :exclude [number?])
   (:require [clojure.string :as str]))
 
-(def input (->> (-> "resources/2023/01.dat" slurp (str/split-lines))))
+(def input (-> "resources/2023/01.dat" slurp (str/split-lines)))
 
 (def number?
   (re-pattern #"\d"))
@@ -38,3 +38,12 @@
              (map (partial map decode-number-string))
              (map ->number))]
     (transduce xf + input)))
+
+(comment
+  (time (part-one input))
+  (time (part-two input))
+  )
+
+
+"Elapsed time: 2.334783 msecs"
+"Elapsed time: 5.455636 msecs"
