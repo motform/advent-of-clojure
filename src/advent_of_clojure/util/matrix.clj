@@ -16,14 +16,23 @@
      (and (<= 0 y max-y)
           (<= 0 x max-x)))))
 
-(def deltas [[1 0] [-1 0] [0 -1] [0 1]])
 
-(def neighbours
+(defn- neighbours' [deltas]
   (memoize
    (fn [bounds point]
      (->> (repeat point)
           (mapv v/+ deltas)
           (filter (partial in-bounds? bounds))))))
+
+(def deltas [[1 0] [-1 0] [0 -1] [0 1]])
+(def neighbours (neighbours' deltas))
+
+(def diagonal-deltas
+  [[-1 -1] [-1 0] [-1 1]
+   [0  -1]        [0  1]
+   [1  -1] [1  1] [1  0]])
+
+(def diagonal-neighbours (neighbours' diagonal-deltas))
 
 (defn map-indexed-matrix [f matrix]
   (map-indexed
