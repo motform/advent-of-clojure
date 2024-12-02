@@ -1,19 +1,25 @@
-(ns advent-of-clojure.2024.01)
+(ns advent-of-clojure.2024.01
+  (:require
+    [clojure.string :as str]))
 
 (defn parse [str]
-  (->> str
-       (re-seq #"\d+")
-       (partition 2)
-       (reduce (fn [[l r] [ll rr]]
-                 [(conj l (parse-long ll)) (conj r (parse-long rr))])
+  (->> str str/split-lines
+       (reduce (fn [[left right] line]
+                 (let [[l r] (->> line (re-seq #"\d+") (mapv parse-long))]
+                   [(conj left l) (conj right r)]))
                [[] []])))
 
 (defn part-1 [list]
-  (->> list (map sort) (apply map #(- %1 %2)) (map abs) (reduce +)))
+  (->> list
+       (map sort)
+       (apply map #(abs (- %1 %2)))
+       (apply +)))
 
-(defn part-2 [[l r]]
-  (let [similarities (frequencies r)]
-    (reduce + (map #(* % (or (similarities %) 0)) l))))
+(defn part-2 [[left right]]
+  (let [similarities (frequencies right)]
+    (->> left
+         (map #(* % (similarities % 0)))
+         (apply +))))
 
 (comment
   (def input (parse (slurp "resources/2024/01.dat")))
